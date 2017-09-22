@@ -1,23 +1,21 @@
-// @flow
 import url from 'url';
-/* Aims to be identical to Hugo's urlize helper */
 
-export function urlize(string: string) {
+export default function urlize(string) {
   const sanitized = makePathSanitized(string);
   const parsedURL = url.parse(sanitized);
 
   return url.format(parsedURL);
 }
 
-function makePathSanitized(string) {
+export function makePathSanitized(string) {
   return makePath(string.toLowerCase());
 }
 
-function makePath(string) {
+export function makePath(string) {
   return unicodeSanitize(string).trim().replace(/[\s]/g, '-').replace(/-+/g, '-');
 }
 
-function unicodeSanitize(string) {
+export function unicodeSanitize(string) {
   let target = [];
   const runes = string.split('');
   for (let i=0; i < string.length; i++) {

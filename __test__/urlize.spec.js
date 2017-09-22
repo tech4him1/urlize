@@ -1,4 +1,4 @@
-import {urlize} from '../src/urlize';
+import urlize from '../src/urlize';
 
 test('urlize', () => {
   const testCases = [
