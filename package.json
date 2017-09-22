@@ -1,14 +1,11 @@
 {
   "name": "urlize",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "compile": "babel -d bin/ src/",
+    "build": "babel -d dist/ src/",
     "test": "jest"
-  },
-  "bin": {
-    "urlize": "bin/index.js"
   },
   "files": [
     "bin",
